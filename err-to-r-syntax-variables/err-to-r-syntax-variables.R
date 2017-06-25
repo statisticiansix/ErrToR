@@ -39,6 +39,8 @@ egVar4 <- c(egVar1,egVar2,egVar3)
 print(egVar4)
 class(egVar4[1]);class(egVar4[2]);class(egVar4[3])
 egVar4[3]
+egVar4[3] <- 'This is a character variable, also referred to as a string - Within a vector'
+egVar4
 
 ### Factor
 egVar5 <- factor(c('Hello World','Factors are different to strings'))
