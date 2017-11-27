@@ -4,7 +4,6 @@ library(knitr)
 library(tidyverse)
 knitr::kable(head(mtcars))
 mtcars$mpg
-class(mtcars$mpg)
 mtcars$mpg[1:6]
 colnames(mtcars)
 
@@ -31,16 +30,16 @@ list2 <- split(mtcars,mtcars$cyl)
 
 ##
 ## cyl=4
-knitr::kable(head(list2$`4`))
+knitr::kable(list2$`4`)
 
 ##
 ## cyl=6
-knitr::kable(head(list2$`6`))
+knitr::kable(list2$`6`)
 
 ##
 ## cyl=8
 # Vanilla vs. Tidyverse
-knitr::kable(head(list2$`8`))
+knitr::kable(list2$`8`)
 
 ## Tibbles
 # Data manipulation
@@ -64,7 +63,6 @@ VERB(DATA,COMMAND)
 
 ### Select
 selected <- select(mtcars_tibble,c(mpg,cyl,carb))
-knitr::kable(selected)
 `column name`
 data$`column name`
 
@@ -80,7 +78,7 @@ filtered2 <- filter(select(mtcars_tibble,c(mpg,cyl,carb)),carb==4,cyl==6)
 piped <- mtcars_tibble %>%
   select(c(mpg,cyl,carb))%>%
   filter(carb==4,cyl==6)
-knitr::kable(piped)
+piped
 
 ##
 ## %>% .
